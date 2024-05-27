@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://api.chipware.co.za/css/flipclock.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://api.chipware.co.za/js/flipclock-min.js"></script>
+  </head>
+  <style>
+    #clock1 {
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	width: 700px;
+    	margin-left: -350px; /*set to a negative number 1/2 of your width*/
+    	height:100px;
+    	margin-top: -60px; /*set to a negative number 1/2 of your height*/
+    }
+  </style>
+  <div class="clock" id="clock1"></div>
+  <script>
+    //* Target Date Must be Like Below
+    //var date = new Date("June 15, 2016 12:45:00");
+    
+    // Just for running purpose
+    //=======================================
+    var start = new Date();
+    start.setDate(start.getDate());
+    start.setHours(0,0,0,0)
+    //======================================
+    var now   = new Date();
+    
+    var diff = (now.getTime() - start.getTime()) / 1000;
+    
+    	var clock = $('#clock1').FlipClock(diff, {
+    		clockFace: 'HourlyCounter',
+    		countdown: false,
+    		showSeconds: true
+    	});
+  </script>
+</html>
